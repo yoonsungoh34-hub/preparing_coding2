@@ -1,7 +1,12 @@
+
 n=list(map(int,input().split()))
 print(n[0]+n[1]+n[2])
 print(n[0]-n[1])
 print(n[0]*n[1])
-print(n[0]//n[1])
-print(n[0]%n[1])
-print(format(float(n[0]) / float(n[1]), ".2f"))
+print(n[0]//n[1]) # 몫
+print(n[0]%n[1]) # 나머지
+print(format(float(n[0]) / float(n[1]), ".2f")) # 실수 나누기
+
+#3항 연산
+c=(a if (a>=b) else b)
+
