@@ -2,11 +2,47 @@
 n=list(map(int,input().split()))
 print(n[0]+n[1]+n[2])
 print(n[0]-n[1])
+
 print(n[0]*n[1])
 print(n[0]//n[1]) # 몫
 print(n[0]%n[1]) # 나머지
 print(format(float(n[0]) / float(n[1]), ".2f")) # 실수 나누기
 
+#16진수 입력
+n = input()     # 사용자가 대문자 "B"를 입력했다고 가정 (문자열 "B")
+n = int(n, 16)  # "B"를 16진수로 해석해라 -> n은 10진수 숫자 11이 됨
+#int(문자열, 16)은 16진수 문자를 10진수 컴퓨터 숫자로 바꾸는 함수입니다.
+#16진수 출력
+print(hex(n)) #0xff 와 같이 출력
+print(format(n,'X')) # FF 와 같이 출력
+#format(숫자, 'X')는  10진수 숫자를 다시 화면에 16진수 문자로 보여주는 함수입니다.
+str_n = format(n, 'X') # 문자열 형태로 바뀜
+print('%X' %n)
+
 #3항 연산
 c=(a if (a>=b) else b)
 
+#문자의 정수값 알아내기 
+# ord 는 문자 --> 정수(아스키코드)
+# chr 는 정수 --> 문
+
+# 문자 -> 정수 (ord)
+print(ord('A'))  # 출력: 65
+print(ord('가'))  # 출력: 44032
+
+# 정수 -> 문자 (chr)
+print(chr(65))   # 출력: A
+print(chr(44032))# 출력: 가
+
+c = ord(input())
+t = ord('a')
+while t<=c :
+  print(chr(t), end=' ') # 줄바꿈 대신 공백문자
+  t += 1
+#count 함수 --> 문제열에 특정 문자가 몇 개 있는지 반환
+clap = str_n.count('3') + str_n.count('6') + str_n.count('9')
+
+
+for i in range(1,n+1): # 1~n 까지 범위 지정
+    for j in range(1,m+1):
+        print(i,j) # i 띄고 j 로 출력 ex) 1 2
