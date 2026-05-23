@@ -26,13 +26,14 @@ c=(a if (a>=b) else b)
 # ord 는 문자 --> 정수(아스키코드)
 # chr 는 정수 --> 문
 
-# 문자 -> 정수 (ord)
+# 문자 -> 정수 (ord) 아스키 코
 print(ord('A'))  # 출력: 65
-print(ord('가'))  # 출력: 44032
+
+
 
 # 정수 -> 문자 (chr)
 print(chr(65))   # 출력: A
-print(chr(44032))# 출력: 가
+print(chr(97))  # 출력 : a
 
 c = ord(input())
 t = ord('a')
@@ -49,7 +50,9 @@ for i in range(1,n+1): # 1~n 까지 범위 지정
 
 range(시작, 끝, 증감) #시작 수는 포함, 끝 수는 포함하지 않음. [시작, 끝)
 range(n-1, -1, -1) #n-1, n-2, ..., 3, 2, 1, 0
-
+#논리연산자
+ if(mp[x][y+1] == 0  or mp[x][y+1] == 2):
+ if(mp[x][y+1] == 0  and mp[x][y+1] == 2):
 # 최소공배수
 import math
 lcm = math.lcm(a,b,c)
@@ -58,3 +61,36 @@ lcm = math.lcm(a,b,c)
 arr = [[0 for _ in range(3)] for _ in range(2)]
 # 1행 2열의 값을 99로 변경
 matrix[1][2] = 99
+#리스트의 크기를 정확히 모를 경우 append 사용
+grid=[]
+for i in range(n):
+    grid.append(list(map(int,input().split())))
+
+
+#코드업 6097번 문제
+
+h, w = map(int, input().split())
+n = int(input())
+
+# 인덱스 에러를 원천 차단하기 위해 101 x 101 크기의 넉넉한 격자판을 만듭니다.
+mp = [[0 for _ in range(101)] for _ in range(101)]
+
+for _ in range(n):
+    l, d, x, y = map(int, input().split())
+    
+    # 막대 길이만큼 반복하며 격자판 채우기
+    for j in range(l):
+        if d == 0:
+            # 가로 방향: x(세로 위치)는 고정, y(가로 위치)가 j만큼 증가
+            mp[x][y + j] = 1
+        else:
+            # 세로 방향: x(세로 위치)가 j만큼 증가, y(가로 위치)는 고정
+            mp[x + j][y] = 1
+
+# 출력할 때는 정확히 문제에서 요구한 세로(h), 가로(w) 크기만큼만 출력합니다.
+for i in range(1, h + 1):
+    for j in range(1, w + 1):
+        print(mp[i][j], end=' ')
+    print()
+
+    
