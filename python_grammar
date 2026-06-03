@@ -30,6 +30,15 @@ c=(a if (a>=b) else b)
 print(ord('A'))  # 출력: 65
 
 
+# 문자열을 알파벳 순으로 정렬한 리스트 반환
+text = "python"
+sorted_list = sorted(text)
+print(sorted_list)  # ['h', 'n', 'o', 'p', 't', 'y']
+
+# 정렬된 리스트를 다시 문자열로 결합
+sorted_str = "".join(sorted_list)
+print(sorted_str)   # 'hnopty'
+
 
 # 정수 -> 문자 (chr)
 print(chr(65))   # 출력: A
