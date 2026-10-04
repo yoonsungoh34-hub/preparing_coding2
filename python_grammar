@@ -7,6 +7,8 @@ print(n[0]*n[1])
 print(n[0]//n[1]) # 몫
 print(n[0]%n[1]) # 나머지
 print(format(float(n[0]) / float(n[1]), ".2f")) # 실수 나누기
+#input 빠르기 받기
+data=list(map(int,sys.stdin.readline().split())
 
 #16진수 입력
 n = input()     # 사용자가 대문자 "B"를 입력했다고 가정 (문자열 "B")
